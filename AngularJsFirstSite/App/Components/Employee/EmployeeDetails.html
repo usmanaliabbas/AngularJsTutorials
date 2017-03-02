@@ -1,0 +1,67 @@
+﻿<style>
+    .table tr td input[type=button] {        
+        margin-right:5px;
+    }
+    .table tr td input[type=button]:hover {
+        cursor:pointer;        
+    }
+</style>
+<table id="tblContainer" class="table-responsive">
+    <tr>
+        <td>
+            <table id="tblCRUD" class="table form-group">
+                <tr>
+                    <td>
+                        <span>EmpNo</span>
+                    </td>
+                    <td>
+                        <input type="text" id="eno" readonly="readonly" ng-model="EmpNo" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>EmpName</span>
+                    </td>
+                    <td>
+                        <input type="text" id="ename" ng-required="true" ng-model="EmpName" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>Salary</span>
+                    </td>
+                    <td>
+                        <input type="text" id="salary" ng-required="true" ng-model="Salary" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>DeptName</span>
+                    </td>
+                    <td>
+                        <input type="text" id="dname" ng-required="true" ng-model="DeptName" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>Designation</span>
+                    </td>
+                    <td>
+                        <input type="text" id="desig" ng-required="true" ng-model="Designation" class="form-control" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="btn-group">
+                        <input type="button" id="new" value="New" ng-click="clear()" class="btn btn-default" />
+                    
+                        <input type="button" id="save" value="Save" ng-click="save()" class="btn btn-default" />
+                   
+                        <input type="button" id="delete" value="Delete" ng-click="delete()" class="btn btn-default" />
+
+                        <input type="button" id="cancel" value="Cancel" ng-click="cancel()" class="btn btn-default" />
+                    </td>
+                </tr>
+            </table>            
+        </td>        
+    </tr>
+</table>

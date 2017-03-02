@@ -1,0 +1,86 @@
+﻿<html ng-app="EmployeeModule">
+
+<head title="Manage Employee(s)">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Manage Employee(s)</title>
+    
+    <link href="../../../Assets/Css/header-fixed.css" rel="stylesheet" />
+    <link href="../../../Assets/Css/bootstrap.css" rel="stylesheet" />    
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    
+</head>
+
+<body>    
+    <div>
+        <header class="header-fixed">
+
+            <div class="header-limiter">
+
+                <h1><a href="#">Company<span>logo</span></a></h1>
+
+                <nav>
+                    <a href="#/" class="selected">Home</a>                    
+                    <a href="#/employee">Employee</a>
+                    <a href="#">About</a>                    
+                    <a href="#">Contact</a>
+                </nav>
+
+            </div>
+
+        </header>
+
+        <div class="header-fixed-placeholder"></div>
+
+        <h2>Using Angular for Performing CRUD Operations</h2>
+        <div id="employeeListContent" ng-view></div>
+        
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            var showHeaderAt = 150;
+
+            var win = $(window),
+                    body = $('body');
+
+            // Show the fixed header only on larger screen devices
+
+            if (win.width() > 600) {
+
+                // When we scroll more than 150px down, we set the
+                // "fixed" class on the body element.
+
+                win.on('scroll', function (e) {
+
+                    if (win.scrollTop() > showHeaderAt) {
+                        body.addClass('fixed');
+                    }
+                    else {
+                        body.removeClass('fixed');
+                    }
+                });
+
+            }
+
+        });
+
+    </script>    
+
+</body>
+</html>
+
+<script src="App/angular.js"></script>
+<script src="App/angular-route.js"></script>
+<script src="App/app.module.js"></script>
+<script src="App/app.routes.js"></script>
+<script src="App/Components/Employee/EmployeeService.js"></script>
+<script src="App/Components/Employee/EmployeeListController.js"></script>
+<script src="App/Components/Employee/EmployeeDetailController.js"></script>
